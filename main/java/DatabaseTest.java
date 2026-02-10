@@ -12,18 +12,18 @@ public class DatabaseTest {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("PostgreSQL-ге қосылдық! ✅");
-            System.out.println("Дерекқор нұсқасы: " + conn.getMetaData().getDatabaseProductVersion());
+            System.out.println();
+            System.out.println(conn.getMetaData().getDatabaseProductVersion());
 
         } catch (SQLException e) {
-            System.out.println("Қосылу қатесі шықты:");
+            System.out.println();
             System.out.println(e.getMessage());
             e.printStackTrace();
         } finally {
             if (conn != null) {
                 try {
                     conn.close();
-                    System.out.println("Қосылым жабылды.");
+                    System.out.println();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
